@@ -5,7 +5,8 @@ entity Top_module is
     Port(
         clk, reset: in std_logic;
         LED: out std_logic_vector(3 downto 0);
-        SEG: out std_logic_vector(6 downto 0)
+        SEG: out std_logic_vector(6 downto 0);
+        An: out std_logic
     );
 end Top_module;
 
@@ -26,8 +27,9 @@ architecture TB_Top_module_arc of Top_module is
 
     component CONV_7SEG is
         Port(
-            in_decoder_7seg : in std_logic_vector(3 downto 0);
-            SEG: out std_logic_vector(6 downto 0)
+            conta10s: in std_logic_vector(3 downto 0);
+            SEG: out std_logic_vector(6 downto 0);
+            An: out std_logic := '0'
         );
     end component;
 
@@ -48,8 +50,9 @@ begin
     );
 
     u2: CONV_7SEG port map (
-        in_decoder_7seg => cable2,
-        SEG => SEG
+        conta10s => cable2,
+        SEG => SEG,
+        An => An
     );
 
     LED <= cable2;

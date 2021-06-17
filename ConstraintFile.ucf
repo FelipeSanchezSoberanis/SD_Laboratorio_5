@@ -1,0 +1,18 @@
+NET    "An"        LOC = P34;
+
+NET    "LED<0>"    LOC = P15;
+NET    "LED<1>"    LOC = P14;
+NET    "LED<2>"    LOC = P8;
+NET    "LED<3>"    LOC = P7;
+
+NET    "SEG<0>"    LOC = P25;
+NET    "SEG<1>"    LOC = P16;
+NET    "SEG<2>"    LOC = P23;
+NET    "SEG<3>"    LOC = P21;
+NET    "SEG<4>"    LOC = P20;
+NET    "SEG<5>"    LOC = P17;
+NET    "SEG<6>"    LOC = P83;
+
+NET    "clk"       LOC = P54;
+
+NET    "reset"     LOC = P69;

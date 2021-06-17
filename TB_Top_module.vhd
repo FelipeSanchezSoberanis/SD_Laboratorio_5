@@ -11,7 +11,8 @@ ARCHITECTURE behavior OF TB_Top_module IS
       Port(
          clk, reset: in std_logic;
          LED: out std_logic_vector(3 downto 0);
-         SEG: out std_logic_vector(6 downto 0)
+         SEG: out std_logic_vector(6 downto 0);
+         An: out std_logic
       );
    end component;
 
@@ -19,6 +20,7 @@ ARCHITECTURE behavior OF TB_Top_module IS
    signal reset : std_logic := '0';
    signal LED : std_logic_vector(3 downto 0);
    signal SEG : std_logic_vector(6 downto 0);
+   signal An : std_logic := '1';
 
    constant clockFrequency: integer := 50e6;
    constant clockPeriod: time := 1000 ms / clockFrequency;
@@ -29,7 +31,8 @@ BEGIN
       clk => clk,
       reset => reset,
       LED => LED,
-      SEG => SEG
+      SEG => SEG,
+      An => An
    );
 
    clock <= not clock after clockPeriod / 2;

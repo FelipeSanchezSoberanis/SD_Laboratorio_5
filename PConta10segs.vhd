@@ -17,8 +17,9 @@ begin
         if reset = '1' then
             counter <= 0;
         elsif rising_edge(s1seg) and clk = '1' then
-            counter <= counter + 1;
-            if counter = 10 then
+            if counter < 9 then
+                counter <= counter + 1;
+            else
                 counter <= 0;
             end if;
         end if;
